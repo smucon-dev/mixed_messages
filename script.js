@@ -1,6 +1,6 @@
 // forecast times
 const times = ['today', 'tomorrow', 'this week', 'next week', 'this weekend', 'next weekend', 
-'the comming days', 'the next two weeks'];
+'the coming days', 'the next two weeks'];
 
 // weather conditions
 const conditions = ['sunny', 'cloudy', 'rainy', 'foggy', 'windy', 'stormy'];
@@ -10,18 +10,14 @@ const temperatures = ['hot', 'cold', 'warm', 'mild', 'chilly', 'frosty', 'icy', 
 
 
 // return a random entry from a given array
-function getRandomEntry(array) {
-    const index = Math.floor(Math.random() * array.length);
-    return array[index];
-}
+randomEntry = msgPart => msgPart[Math.floor(Math.random() * msgPart.length)];
 
 
-// create and print the weather forecast
+// create and print the weather forecast ... incl. ascii art ;-)
 function forecast() {
-    const time = getRandomEntry(times);
-    const condition = getRandomEntry(conditions);
-    const temperature = getRandomEntry(temperatures);
-    console.log(`The weather ${time} will be ${condition} and ${temperature}.`);
+    const condition = randomEntry(conditions);
+    console.log();
+    console.log(`The weather ${randomEntry(times)} will be ${condition} and ${randomEntry(temperatures)}.`);
     switch (condition) {
         case 'sunny':
             asciiSunny();
@@ -42,6 +38,7 @@ function forecast() {
             asciiStormy();
             break;
     }
+    console.log();
 }
 
 /*
