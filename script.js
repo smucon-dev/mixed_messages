@@ -17,10 +17,73 @@ function forecast() {
     const time = getRandomEntry(times);
     const condition = getRandomEntry(conditions);
     const temperature = getRandomEntry(temperatures);
-    return `The weather ${time} will be ${condition} and ${temperature}.`;
+    console.log(`The weather ${time} will be ${condition} and ${temperature}.`);
+    switch (condition) {
+        case 'sunny':
+            asciiSunny();
+            break;
+        case 'cloudy':
+            asciiCloudy();
+            break;
+        case 'rainy':
+            asciiRainy();
+            break;
+        case 'foggy':
+            asciiFoggy();
+            break;
+        case 'windy':
+            asciiWindy();
+            break;
+        case 'stormy':
+            asciiStormy();
+            break;
+    }
 }
 
-console.log(forecast());
+function asciiSunny() {
+    console.log('');
+    console.log(' \\|/');
+    console.log(' -o-');
+    console.log(' /|\\');
+}
+
+function asciiCloudy() {
+    console.log('');
+    console.log('  ( ) ( ) ');
+    console.log(' ( )( )( )');
+    console.log('  ( ) ( )');
+}
+
+function asciiRainy() {
+    console.log('');
+    console.log(' | | |');
+    console.log('  | |');
+    console.log(' | | |');
+}
+
+function asciiFoggy() {
+    console.log('');
+    console.log('  - - ');
+    console.log(' - - -');
+    console.log('  - - ');
+}
+
+function asciiWindy() {
+    console.log('');
+    console.log('  ~ ~ ');
+    console.log(' ~ ~ ~');
+    console.log('  ~ ~');
+}
+
+function asciiStormy() {
+    console.log('');
+    console.log('  ≈ ≈ ');
+    console.log(' ≈ ≈ ≈');
+    console.log('  ≈ ≈ ');
+}
+
+forecast();
+
 
 /**************
     Tests
