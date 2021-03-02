@@ -8,11 +8,15 @@ const conditions = ['sunny', 'cloudy', 'rainy', 'foggy', 'windy', 'stormy'];
 // temperature adjectives
 const temperatures = ['hot', 'cold', 'warm', 'mild', 'chilly', 'frosty', 'icy', 'dry'];
 
+
+// return a random entry from a given array
 function getRandomEntry(array) {
     const index = Math.floor(Math.random() * array.length);
     return array[index];
 }
 
+
+// create and print the weather forecast
 function forecast() {
     const time = getRandomEntry(times);
     const condition = getRandomEntry(conditions);
@@ -40,6 +44,9 @@ function forecast() {
     }
 }
 
+/*
+    Ascii art functions
+*/
 function asciiSunny() {
     console.log('');
     console.log(' \\|/');
@@ -84,21 +91,3 @@ function asciiStormy() {
 
 forecast();
 
-
-/**************
-    Tests
-***************/
-
-// test function for getRandomEntry()
-function test_getRandomEntry(array) {
-    const entries = [];
-    for (let i = 0; i < 100; i++) {
-        const entry = getRandomEntry(array);
-        if (!entries.includes(entry)){
-            entries.push(entry);
-        }
-    }
-    return entries.length === temperatures.length;
-}
-
-// console.log(test_getRandomEntry(times));
