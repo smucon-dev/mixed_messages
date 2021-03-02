@@ -7,6 +7,6 @@
 * [Technologies](#technologies)
 
 ## General Info
-A message gererator programm which generates random weather forecasts every time it is ruun.
+A message gererator programm which generates random weather forecasts every time it is run.
 
 ## Technologies
